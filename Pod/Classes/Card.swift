@@ -13,31 +13,47 @@ public struct Card {
     let id: String
     let name: String
     let description: String?
-    let url: String?
     let closed: Bool?
     let position: Int?
     let dueDate: NSDate?
-    let members: [Member]?
+    let listId: String?
+    let memberIds: [String]?
+    let boardId: String?
+    let shortURL: String?
     let labels: [Label]?
 }
 
 extension Card: Decodable {
+    private static var isoDateFormatter = Card.isoDateFormatterInit()
+    
+    private static func isoDateFormatterInit() -> NSDateFormatter {
+        var dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        dateFormatter.timeZone = NSTimeZone.localTimeZone()
+        
+        return dateFormatter
+    }
+    
     public static func decode(json: AnyObject) throws -> Card {
-        var date: NSDate?
-        if let jsonDate = try json =>? "date" as! String? {
-            date = try NSDateFormatter().dateFromString(jsonDate)
+        let dueDate: NSDate?
+        
+        if let jsonDate = try json =>? "due" as! String? {
+            dueDate = try Card.isoDateFormatter.dateFromString(jsonDate)
         } else {
-            date = nil
+            dueDate = nil
         }
         
         return try Card(id: json => "id",
                         name: json => "name",
                         description: json =>? "description",
-                        url: json =>? "url",
                         closed: json =>? "closed",
                         position: json =>? "position",
-                        dueDate: date,
-                        members: json =>? "members",
+                        dueDate: dueDate,
+                        listId: json =>? "idList",
+                        memberIds: json =>? "idMembers",
+                        boardId: json =>? "idBoard",
+                        shortURL: json =>? "shortUrl",
                         labels: json =>? "labels")
     }
 }
