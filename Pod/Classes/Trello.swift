@@ -62,7 +62,7 @@ public class Trello {
 //        }
 //    }
     
-    
+    // TODO: Split into extensions?
     // MARK: Boards
     public func getAllBoards(completion: (Result<[Board]>) -> Void) {
         Alamofire.request(.GET, Router.AllBoards, parameters: self.authParameters).responseJSON { (let response) in
