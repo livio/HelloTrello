@@ -16,6 +16,8 @@
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>net.daringfireball.markdown</string>
 			<key>name</key>
 			<string>README.md</string>
 			<key>path</key>
@@ -35,6 +37,13 @@
 			<string>Pods_HelloTrello_Example.framework</string>
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>1045C8C99E17BDA1AD6C5642</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3D47BE05F48AEE4B60C41136</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>24474BB3495483CD8443A48A</key>
 		<dict>
@@ -66,6 +75,8 @@
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
 			<key>name</key>
 			<string>LICENSE</string>
 			<key>path</key>
@@ -94,12 +105,27 @@
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
 			<key>name</key>
 			<string>HelloTrello.podspec</string>
 			<key>path</key>
 			<string>../HelloTrello.podspec</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3D47BE05F48AEE4B60C41136</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
 		<key>4BEFB7B24716BB9A1DAA42AE</key>
 		<dict>
@@ -148,6 +174,26 @@
 </string>
 			<key>showEnvVarsInLog</key>
 			<string>0</string>
+		</dict>
+		<key>5D0B1ADA1CBD8C0B00D57CFE</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>LivioTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5D0B1ADB1CBD8C0B00D57CFE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5D0B1ADA1CBD8C0B00D57CFE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>607FACC71AFB9204008FA782</key>
 		<dict>
@@ -242,6 +288,7 @@
 			<string>2147483647</string>
 			<key>files</key>
 			<array>
+				<string>5D0B1ADB1CBD8C0B00D57CFE</string>
 				<string>607FACD81AFB9204008FA782</string>
 				<string>607FACD61AFB9204008FA782</string>
 			</array>
@@ -257,6 +304,7 @@
 			<key>files</key>
 			<array>
 				<string>8DF0101CBCBD77C8A52C92A6</string>
+				<string>1045C8C99E17BDA1AD6C5642</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -603,6 +651,7 @@
 		<dict>
 			<key>children</key>
 			<array>
+				<string>5D0B1ADA1CBD8C0B00D57CFE</string>
 				<string>607FACEB1AFB9204008FA782</string>
 				<string>607FACE91AFB9204008FA782</string>
 			</array>
@@ -999,6 +1048,7 @@
 			<array>
 				<string>0CB853963033C65D816A740F</string>
 				<string>76881BDEC8EB8FD401378EC9</string>
+				<string>3D47BE05F48AEE4B60C41136</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -1033,7 +1083,7 @@
 			<key>shellPath</key>
 			<string>/bin/sh</string>
 			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods-HelloTrello_Example/Pods-HelloTrello_Example-frameworks.sh"
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh"
 </string>
 			<key>showEnvVarsInLog</key>
 			<string>0</string>
