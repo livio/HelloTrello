@@ -1,12 +1,16 @@
 PODS:
   - Alamofire (3.3.1)
+  - AlamofireImage (2.4.0):
+    - Alamofire (~> 3.3)
   - Decodable (0.4.2)
   - HelloTrello (0.1.0):
     - Alamofire (~> 3.0)
+    - AlamofireImage (~> 2.0)
     - Decodable (~> 0.4)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
+  - AlamofireImage (~> 2.0)
   - Decodable (~> 0.4)
   - HelloTrello (from `../`)
 
@@ -16,7 +20,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  AlamofireImage: 87408b652e0f5ae5fe364035f15aea8b9b24c77e
   Decodable: b1cd96ad9f722721bc98b0310952214a47f71d6a
-  HelloTrello: 8d68f36fce8d475417b8823b135f69abdf9c59c8
+  HelloTrello: 281a77da543ed936612820b7655cbcca72d5b5e8
 
 COCOAPODS: 0.39.0
