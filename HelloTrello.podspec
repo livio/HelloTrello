@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = "HelloTrello"
   s.version          = "0.1.0"
-  s.summary          = "A short description of HelloTrello."
+  s.summary          = "A Swift library to interact with the Trello API"
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
+    HelloTrello is a simple Swift API to interact with the Trello API. It uses auth-tokens and currenly only supports basic GET requests.
                        DESC
 
   s.homepage         = "https://github.com/livio/HelloTrello"
@@ -35,8 +36,6 @@ Pod::Spec.new do |s|
     'HelloTrello' => ['Pod/Assets/*.png']
   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
   s.dependency 'Alamofire', '~> 3.0'
   s.dependency 'AlamofireImage', '~> 2.0'
   s.dependency 'Decodable', '~> 0.4'
