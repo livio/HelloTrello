@@ -27,7 +27,7 @@ extension Card: Decodable {
     private static var isoDateFormatter = Card.isoDateFormatterInit()
     
     private static func isoDateFormatterInit() -> NSDateFormatter {
-        var dateFormatter = NSDateFormatter()
+        let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
         dateFormatter.timeZone = NSTimeZone.localTimeZone()
@@ -39,7 +39,7 @@ extension Card: Decodable {
         let dueDate: NSDate?
         
         if let jsonDate = try json =>? "due" as! String? {
-            dueDate = try Card.isoDateFormatter.dateFromString(jsonDate)
+            dueDate = Card.isoDateFormatter.dateFromString(jsonDate)
         } else {
             dueDate = nil
         }
