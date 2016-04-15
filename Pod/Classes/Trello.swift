@@ -62,8 +62,9 @@ public class Trello {
 //            // Returns a list of actions, boards, cards, members, and orgs that match the query
 //        }
 //    }
-    
-    // TODO: Split into extensions?
+}
+
+extension Trello {
     // MARK: Boards
     public func getAllBoards(completion: (Result<[Board]>) -> Void) {
         Alamofire.request(.GET, Router.AllBoards, parameters: self.authParameters).responseJSON { (let response) in
@@ -80,9 +81,10 @@ public class Trello {
             }
         }
     }
-    
-    
-    // MARK: Lists
+}
+
+// MARK: Lists
+extension Trello {
     public func listsForBoard(id: String, filter: ListType = .Open, completion: (Result<[CardList]>) -> Void) {
         let parameters = self.authParameters + ["filter": filter.rawValue]
         
@@ -104,9 +106,11 @@ public class Trello {
     public func listsForBoard(board: Board, filter: ListType = .Open, completion: (Result<[CardList]>) -> Void) {
         listsForBoard(board.id, filter: filter, completion: completion)
     }
-    
-    
-    // MARK: Cards
+}
+
+
+// MARK: Cards
+extension Trello {
     public func cardsForList(id: String, withMembers: Bool = false, completion: (Result<[Card]>) -> Void) {
         let parameters = self.authParameters + ["members": withMembers]
         
@@ -125,6 +129,7 @@ public class Trello {
         }
     }
 }
+
 
 // Member API
 extension Trello {
