@@ -10,12 +10,12 @@ import UIKit
 import Decodable
 
 public struct Board {
-    let id: String
-    let name: String
-    let description: String?
-    let url: String?
-    let closed: Bool?
-    let organizationId: String?
+    public let id: String
+    public let name: String
+    public let description: String?
+    public let url: String?
+    public let closed: Bool?
+    public let organizationId: String?
 }
 
 extension Board: Decodable {

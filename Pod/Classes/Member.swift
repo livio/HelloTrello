@@ -10,14 +10,14 @@ import UIKit
 import Decodable
 
 public struct Member {
-    let id: String
-    let avatarHash: String?
-    let bio: String?
-    let confirmed: Bool?
-    let fullName: String?
-    let initials: String?
-    let username: String?
-    let email: String?
+    public let id: String
+    public let avatarHash: String?
+    public let bio: String?
+    public let confirmed: Bool?
+    public let fullName: String?
+    public let initials: String?
+    public let username: String?
+    public let email: String?
 }
 
 extension Member: Decodable {

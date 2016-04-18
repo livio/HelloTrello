@@ -10,17 +10,17 @@ import UIKit
 import Decodable
 
 public struct Card {
-    let id: String
-    let name: String
-    let description: String?
-    let closed: Bool?
-    let position: Int?
-    let dueDate: NSDate?
-    let listId: String?
-    let memberIds: [String]?
-    let boardId: String?
-    let shortURL: String?
-    let labels: [Label]?
+    public let id: String
+    public let name: String
+    public let description: String?
+    public let closed: Bool?
+    public let position: Int?
+    public let dueDate: NSDate?
+    public let listId: String?
+    public let memberIds: [String]?
+    public let boardId: String?
+    public let shortURL: String?
+    public let labels: [Label]?
 }
 
 extension Card: Decodable {

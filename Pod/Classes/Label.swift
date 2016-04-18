@@ -10,11 +10,11 @@ import UIKit
 import Decodable
 
 public struct Label {
-    let id: String
-    let name: String?
-    let color: String
-    let boardId: String?
-    let uses: Int?
+    public let id: String
+    public let name: String?
+    public let color: String
+    public let boardId: String?
+    public let uses: Int?
 }
 
 extension Label: Decodable {

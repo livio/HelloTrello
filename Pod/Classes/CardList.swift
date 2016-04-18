@@ -10,12 +10,12 @@ import UIKit
 import Decodable
 
 public struct CardList {
-    let id: String
-    let name: String
-    let boardId: String?
-    let pos: Int?
-    let subscribed: Bool?
-    let closed: Bool?
+    public let id: String
+    public let name: String
+    public let boardId: String?
+    public let pos: Int?
+    public let subscribed: Bool?
+    public let closed: Bool?
 }
 
 extension CardList: Decodable {
