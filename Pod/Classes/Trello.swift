@@ -45,6 +45,22 @@ public enum ListType: String {
     case Open = "open"
 }
 
+public enum CardType: String {
+    case All = "all"
+    case Closed = "closed"
+    case None = "none"
+    case Open = "open"
+    case Visible = "visible"
+}
+
+public enum MemberType: String {
+    case Admins = "admins"
+    case All = "all"
+    case None = "none"
+    case Normal = "normal"
+    case Owners = "owners"
+}
+
 public class Trello {
     
     let authParameters: [String: AnyObject]
@@ -82,8 +98,8 @@ extension Trello {
         }
     }
     
-    public func getBoard(id: String, includeLists: Bool = false, includeCards: Bool = false, completion: (Result<Board>) -> Void) {
-        let parameters = self.authParameters + ["cards": "open"] + ["lists": "open"]
+    public func getBoard(id: String, includingLists listType: ListType = .None, includingCards cardType: CardType = .None, includingMembers memberType: MemberType = .None, completion: (Result<Board>) -> Void) {
+        let parameters = self.authParameters + ["cards": cardType.rawValue] + ["lists": listType.rawValue] + ["members": memberType.rawValue]
         
         Alamofire.request(.GET, Router.Board(boardId: id), parameters: parameters).responseJSON { (let response) in
             guard let json = response.result.value else {

@@ -18,6 +18,7 @@ public struct Board {
     public let organizationId: String?
     public let lists: [CardList]?
     public let cards: [Card]?
+    public let members: [Member]?
 }
 
 extension Board: Decodable {
@@ -29,6 +30,7 @@ extension Board: Decodable {
                          closed: json =>? "closed",
                          organizationId: json =>? "idOrganization",
                          lists: json =>? "lists",
-                         cards: json =>? "cards")
+                         cards: json =>? "cards",
+                         members: json =>? "members")
     }
 }
