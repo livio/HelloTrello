@@ -16,6 +16,8 @@ public struct Board {
     public let url: String?
     public let closed: Bool?
     public let organizationId: String?
+    public let lists: [CardList]?
+    public let cards: [Card]?
 }
 
 extension Board: Decodable {
@@ -25,6 +27,8 @@ extension Board: Decodable {
                          description: json =>? "desc",
                          url: json =>? "url",
                          closed: json =>? "closed",
-                         organizationId: json =>? "idOrganization")
+                         organizationId: json =>? "idOrganization",
+                         lists: json =>? "lists",
+                         cards: json =>? "cards")
     }
 }

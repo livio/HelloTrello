@@ -81,11 +81,29 @@ extension Trello {
             }
         }
     }
+    
+    public func getBoard(id: String, includeLists: Bool = false, includeCards: Bool = false, completion: (Result<Board>) -> Void) {
+        let parameters = self.authParameters + ["cards": "open"] + ["lists": "open"]
+        
+        Alamofire.request(.GET, Router.Board(boardId: id), parameters: parameters).responseJSON { (let response) in
+            guard let json = response.result.value else {
+                completion(.Failure(TrelloError.NetworkError(error: response.result.error)))
+                return
+            }
+            
+            do {
+                let board = try Board.decode(json)
+                completion(.Success(board))
+            } catch {
+                completion(.Failure(TrelloError.JSONError(error: error)))
+            }
+        }
+    }
 }
 
 // MARK: Lists
 extension Trello {
-    public func listsForBoard(id: String, filter: ListType = .Open, completion: (Result<[CardList]>) -> Void) {
+    public func getListsForBoard(id: String, filter: ListType = .Open, completion: (Result<[CardList]>) -> Void) {
         let parameters = self.authParameters + ["filter": filter.rawValue]
         
         Alamofire.request(.GET, Router.Lists(boardId: id), parameters: parameters).responseJSON { (let response) in
@@ -103,15 +121,15 @@ extension Trello {
         }
     }
     
-    public func listsForBoard(board: Board, filter: ListType = .Open, completion: (Result<[CardList]>) -> Void) {
-        listsForBoard(board.id, filter: filter, completion: completion)
+    public func getListsForBoard(board: Board, filter: ListType = .Open, completion: (Result<[CardList]>) -> Void) {
+        getListsForBoard(board.id, filter: filter, completion: completion)
     }
 }
 
 
 // MARK: Cards
 extension Trello {
-    public func cardsForList(id: String, withMembers: Bool = false, completion: (Result<[Card]>) -> Void) {
+    public func getCardsForList(id: String, withMembers: Bool = false, completion: (Result<[Card]>) -> Void) {
         let parameters = self.authParameters + ["members": withMembers]
         
         Alamofire.request(.GET, Router.CardsForList(listId: id), parameters: parameters).responseJSON { (let response) in
@@ -151,7 +169,7 @@ extension Trello {
         }
     }
     
-    public func membersForCard(cardId: String, completion: (Result<[Member]>) -> Void) {
+    public func getMembersForCard(cardId: String, completion: (Result<[Member]>) -> Void) {
         let parameters = self.authParameters
         
         Alamofire.request(.GET, Router.Member(id: cardId), parameters: parameters).responseJSON { (let response) in
@@ -192,6 +210,7 @@ private enum Router: URLStringConvertible {
     
     case Search
     case AllBoards
+    case Board(boardId: String)
     case Lists(boardId: String)
     case CardsForList(listId: String)
     case Member(id: String)
@@ -203,6 +222,8 @@ private enum Router: URLStringConvertible {
             return Router.baseURLString + "search/"
         case .AllBoards:
             return Router.baseURLString + "members/me/boards/"
+        case .Board(let boardId):
+            return Router.baseURLString + "boards/\(boardId)/"
         case .Lists(let boardId):
             return Router.baseURLString + "boards/\(boardId)/lists/"
         case .CardsForList(let listId):
