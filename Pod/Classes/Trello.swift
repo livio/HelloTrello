@@ -11,31 +11,31 @@ import Alamofire
 import AlamofireImage
 
 public enum Result<T> {
-    case Failure(ErrorType)
-    case Success(T)
+    case failure(Error)
+    case success(T)
     
     public var value: T? {
         switch self {
-        case .Success(let value):
+        case .success(let value):
             return value
-        case .Failure:
+        case .failure:
             return nil
         }
     }
     
-    public var error: ErrorType? {
+    public var error: Error? {
         switch self {
-        case .Success:
+        case .success:
             return nil
-        case .Failure(let error):
+        case .failure(let error):
             return error
         }
     }
 }
 
-public enum TrelloError: ErrorType {
-    case NetworkError(error: NSError?)
-    case JSONError(error: ErrorType?)
+public enum TrelloError: Error {
+    case networkError(error: NSError?)
+    case jsonError(error: Error?)
 }
 
 public enum ListType: String {
@@ -61,12 +61,12 @@ public enum MemberType: String {
     case Owners = "owners"
 }
 
-public class Trello {
+open class Trello {
     
     let authParameters: [String: AnyObject]
     
     public init(apiKey: String, authToken: String) {
-        self.authParameters = ["key": apiKey, "token": authToken]
+        self.authParameters = ["key": apiKey as AnyObject, "token": authToken as AnyObject]
     }
     
     // TODO: The response end of this is tough
@@ -82,8 +82,8 @@ public class Trello {
 
 extension Trello {
     // MARK: Boards
-    public func getAllBoards(completion: (Result<[Board]>) -> Void) {
-        Alamofire.request(.GET, Router.AllBoards, parameters: self.authParameters).responseJSON { (let response) in
+    public func getAllBoards(_ completion: @escaping (Result<[Board]>) -> Void) {
+        Alamofire.request(.GET, Router.AllBoards, parameters: self.authParameters).responseJSON { (response) in
             guard let json = response.result.value else {
                 completion(.Failure(TrelloError.NetworkError(error: response.result.error)))
                 return
@@ -98,10 +98,10 @@ extension Trello {
         }
     }
     
-    public func getBoard(id: String, includingLists listType: ListType = .None, includingCards cardType: CardType = .None, includingMembers memberType: MemberType = .None, completion: (Result<Board>) -> Void) {
+    public func getBoard(_ id: String, includingLists listType: ListType = .None, includingCards cardType: CardType = .None, includingMembers memberType: MemberType = .None, completion: @escaping (Result<Board>) -> Void) {
         let parameters = self.authParameters + ["cards": cardType.rawValue] + ["lists": listType.rawValue] + ["members": memberType.rawValue]
         
-        Alamofire.request(.GET, Router.Board(boardId: id), parameters: parameters).responseJSON { (let response) in
+        Alamofire.request(.GET, Router.Board(boardId: id), parameters: parameters).responseJSON { (response) in
             guard let json = response.result.value else {
                 completion(.Failure(TrelloError.NetworkError(error: response.result.error)))
                 return
@@ -119,10 +119,10 @@ extension Trello {
 
 // MARK: Lists
 extension Trello {
-    public func getListsForBoard(id: String, filter: ListType = .Open, completion: (Result<[CardList]>) -> Void) {
+    public func getListsForBoard(_ id: String, filter: ListType = .Open, completion: @escaping (Result<[CardList]>) -> Void) {
         let parameters = self.authParameters + ["filter": filter.rawValue]
         
-        Alamofire.request(.GET, Router.Lists(boardId: id), parameters: parameters).responseJSON { (let response) in
+        Alamofire.request(.GET, Router.Lists(boardId: id), parameters: parameters).responseJSON { (response) in
             guard let json = response.result.value else {
                 completion(.Failure(TrelloError.NetworkError(error: response.result.error)))
                 return
@@ -137,7 +137,7 @@ extension Trello {
         }
     }
     
-    public func getListsForBoard(board: Board, filter: ListType = .Open, completion: (Result<[CardList]>) -> Void) {
+    public func getListsForBoard(_ board: Board, filter: ListType = .Open, completion: @escaping (Result<[CardList]>) -> Void) {
         getListsForBoard(board.id, filter: filter, completion: completion)
     }
 }
@@ -145,10 +145,10 @@ extension Trello {
 
 // MARK: Cards
 extension Trello {
-    public func getCardsForList(id: String, withMembers: Bool = false, completion: (Result<[Card]>) -> Void) {
+    public func getCardsForList(_ id: String, withMembers: Bool = false, completion: @escaping (Result<[Card]>) -> Void) {
         let parameters = self.authParameters + ["members": withMembers]
         
-        Alamofire.request(.GET, Router.CardsForList(listId: id), parameters: parameters).responseJSON { (let response) in
+        Alamofire.request(.GET, Router.CardsForList(listId: id), parameters: parameters).responseJSON { (response) in
             guard let json = response.result.value else {
                 completion(.Failure(TrelloError.NetworkError(error: response.result.error)))
                 return
@@ -167,10 +167,10 @@ extension Trello {
 
 // Member API
 extension Trello {
-    public func getMember(id: String, completion: (Result<Member>) -> Void) {
+    public func getMember(_ id: String, completion: @escaping (Result<Member>) -> Void) {
         let parameters = self.authParameters
         
-        Alamofire.request(.GET, Router.Member(id: id), parameters: parameters).responseJSON { (let response) in
+        Alamofire.request(.GET, Router.Member(id: id), parameters: parameters).responseJSON { (response) in
             guard let json = response.result.value else {
                 completion(.Failure(TrelloError.NetworkError(error: response.result.error)))
                 return
@@ -185,10 +185,10 @@ extension Trello {
         }
     }
     
-    public func getMembersForCard(cardId: String, completion: (Result<[Member]>) -> Void) {
+    public func getMembersForCard(_ cardId: String, completion: @escaping (Result<[Member]>) -> Void) {
         let parameters = self.authParameters
         
-        Alamofire.request(.GET, Router.Member(id: cardId), parameters: parameters).responseJSON { (let response) in
+        Alamofire.request(.GET, Router.Member(id: cardId), parameters: parameters).responseJSON { (response) in
             guard let json = response.result.value else {
                 completion(.Failure(TrelloError.NetworkError(error: response.result.error)))
                 return
@@ -203,7 +203,7 @@ extension Trello {
         }
     }
     
-    public func getAvatarImage(avatarHash: String, size: AvatarSize, completion: (Result<Image>) -> Void) {
+    public func getAvatarImage(_ avatarHash: String, size: AvatarSize, completion: (Result<Image>) -> Void) {
         Alamofire.request(.GET, "https://trello-avatars.s3.amazonaws.com/\(avatarHash)/\(size.rawValue).png").responseImage { response in
             guard let image = response.result.value else {
                 completion(.Failure(TrelloError.NetworkError(error: response.result.error)))
@@ -215,8 +215,8 @@ extension Trello {
     }
     
     public enum AvatarSize: Int {
-        case Small = 30
-        case Large = 170
+        case small = 30
+        case large = 170
     }
 }
 
@@ -224,29 +224,29 @@ extension Trello {
 private enum Router: URLStringConvertible {
     static let baseURLString = "https://api.trello.com/1/"
     
-    case Search
-    case AllBoards
-    case Board(boardId: String)
-    case Lists(boardId: String)
-    case CardsForList(listId: String)
-    case Member(id: String)
-    case MembersForCard(cardId: String)
+    case search
+    case allBoards
+    case board(boardId: String)
+    case lists(boardId: String)
+    case cardsForList(listId: String)
+    case member(id: String)
+    case membersForCard(cardId: String)
     
     var URLString: String {
         switch self {
-        case .Search:
+        case .search:
             return Router.baseURLString + "search/"
-        case .AllBoards:
+        case .allBoards:
             return Router.baseURLString + "members/me/boards/"
-        case .Board(let boardId):
+        case .board(let boardId):
             return Router.baseURLString + "boards/\(boardId)/"
-        case .Lists(let boardId):
+        case .lists(let boardId):
             return Router.baseURLString + "boards/\(boardId)/lists/"
-        case .CardsForList(let listId):
+        case .cardsForList(let listId):
             return Router.baseURLString + "lists/\(listId)/cards/"
-        case .Member(let memberId):
+        case .member(let memberId):
             return Router.baseURLString + "members/\(memberId)/"
-        case .MembersForCard(let cardId):
+        case .membersForCard(let cardId):
             return Router.baseURLString + "cards/\(cardId)/members/"
         }
     }
@@ -254,7 +254,7 @@ private enum Router: URLStringConvertible {
 
 // MARK: Dictionary Operator Overloading
 // http://stackoverflow.com/questions/24051904/how-do-you-add-a-dictionary-of-items-into-another-dictionary/
-func +=<K, V> (inout left: [K: V], right: [K: V]) {
+func +=<K, V> (left: inout [K: V], right: [K: V]) {
     right.forEach({ left.updateValue($1, forKey: $0) })
 }
 

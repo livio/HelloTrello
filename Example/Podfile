@@ -1,23 +1,24 @@
 use_frameworks!
 
 target 'HelloTrello_Example' do
-  platform :ios, '9.0'
+  platform :ios, '10.0'
   pod 'HelloTrello', :path => '../'
 
-  pod 'Alamofire',        '~> 3.0'
-  pod 'Decodable',        '~> 0.4'
-  pod 'AlamofireImage',   '~> 2.0'
+  pod 'Alamofire',        '~> 4.5'
+  pod 'Decodable',        '~> 0.5'
+  pod 'AlamofireImage',   '~> 3.3'
 end
 
 target 'HelloTrello_mac_example' do
-  platform :macos, '10.10'
+  platform :macos, '10.11'
   pod 'HelloTrello', :path => '../'
 
-  pod 'Alamofire',        '~> 3.0'
-  pod 'Decodable',        '~> 0.4'
-  pod 'AlamofireImage',   '~> 2.0'
+  pod 'Alamofire',        '~> 4.5'
+  pod 'Decodable',        '~> 0.5'
+  pod 'AlamofireImage',   '~> 3.3'
 end
 
 target 'HelloTrello_Tests' do
+  platform :ios, '10.0'
   pod 'HelloTrello', :path => '../'
 end

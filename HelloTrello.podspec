@@ -27,9 +27,9 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/livio/HelloTrello.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '9.0'
-  s.tvos.deployment_target = '9.0'
-  s.macos.deployment_target = '10.10'
+  s.ios.deployment_target = '10.0'
+  s.tvos.deployment_target = '10.0'
+  s.macos.deployment_target = '10.11'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
@@ -37,7 +37,7 @@ Pod::Spec.new do |s|
     'HelloTrello' => ['Pod/Assets/*.png']
   }
 
-  s.dependency 'Alamofire', '~> 3.5'
-  s.dependency 'AlamofireImage', '~> 2.5'
+  s.dependency 'Alamofire', '~> 4.5'
+  s.dependency 'AlamofireImage', '~> 3.5'
   s.dependency 'Decodable', '~> 0.5'
 end
