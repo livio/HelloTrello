@@ -6,7 +6,7 @@
 //
 //
 
-import UIKit
+import Foundation
 import Decodable
 
 public struct Board {
