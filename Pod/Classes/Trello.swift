@@ -34,7 +34,7 @@ public enum Result<T> {
 }
 
 public enum TrelloError: Error {
-    case networkError(error: NSError?)
+    case networkError(error: Error?)
     case jsonError(error: Error?)
 }
 
@@ -83,35 +83,35 @@ open class Trello {
 extension Trello {
     // MARK: Boards
     public func getAllBoards(_ completion: @escaping (Result<[Board]>) -> Void) {
-        Alamofire.request(.GET, Router.AllBoards, parameters: self.authParameters).responseJSON { (response) in
+        Alamofire.request(Router.allBoards, parameters: self.authParameters).responseJSON { (response) in
             guard let json = response.result.value else {
-                completion(.Failure(TrelloError.NetworkError(error: response.result.error)))
+                completion(.failure(TrelloError.networkError(error: response.result.error)))
                 return
             }
             
             do {
                 let boards = try [Board].decode(json)
-                completion(.Success(boards))
+                completion(.success(boards))
             } catch (let error) {
-                completion(.Failure(TrelloError.JSONError(error: error)))
+                completion(.failure(TrelloError.jsonError(error: error)))
             }
         }
     }
     
     public func getBoard(_ id: String, includingLists listType: ListType = .None, includingCards cardType: CardType = .None, includingMembers memberType: MemberType = .None, completion: @escaping (Result<Board>) -> Void) {
-        let parameters = self.authParameters + ["cards": cardType.rawValue] + ["lists": listType.rawValue] + ["members": memberType.rawValue]
+        let parameters = self.authParameters + ["cards": cardType.rawValue as AnyObject] + ["lists": listType.rawValue as AnyObject] + ["members": memberType.rawValue as AnyObject]
         
-        Alamofire.request(.GET, Router.Board(boardId: id), parameters: parameters).responseJSON { (response) in
+        Alamofire.request(Router.board(boardId: id).URLString, parameters: parameters).responseJSON { (response) in
             guard let json = response.result.value else {
-                completion(.Failure(TrelloError.NetworkError(error: response.result.error)))
+                completion(.failure(TrelloError.networkError(error: response.result.error)))
                 return
             }
             
             do {
                 let board = try Board.decode(json)
-                completion(.Success(board))
+                completion(.success(board))
             } catch {
-                completion(.Failure(TrelloError.JSONError(error: error)))
+                completion(.failure(TrelloError.jsonError(error: error)))
             }
         }
     }
@@ -120,19 +120,19 @@ extension Trello {
 // MARK: Lists
 extension Trello {
     public func getListsForBoard(_ id: String, filter: ListType = .Open, completion: @escaping (Result<[CardList]>) -> Void) {
-        let parameters = self.authParameters + ["filter": filter.rawValue]
+        let parameters = self.authParameters + ["filter": filter.rawValue as AnyObject]
         
-        Alamofire.request(.GET, Router.Lists(boardId: id), parameters: parameters).responseJSON { (response) in
+        Alamofire.request(Router.lists(boardId: id).URLString, parameters: parameters).responseJSON { (response) in
             guard let json = response.result.value else {
-                completion(.Failure(TrelloError.NetworkError(error: response.result.error)))
+                completion(.failure(TrelloError.networkError(error: response.result.error)))
                 return
             }
             
             do {
                 let lists = try [CardList].decode(json)
-                completion(.Success(lists))
+                completion(.success(lists))
             } catch {
-                completion(.Failure(TrelloError.JSONError(error: error)))
+                completion(.failure(TrelloError.jsonError(error: error)))
             }
         }
     }
@@ -146,19 +146,19 @@ extension Trello {
 // MARK: Cards
 extension Trello {
     public func getCardsForList(_ id: String, withMembers: Bool = false, completion: @escaping (Result<[Card]>) -> Void) {
-        let parameters = self.authParameters + ["members": withMembers]
+        let parameters = self.authParameters + ["members": withMembers as AnyObject]
         
-        Alamofire.request(.GET, Router.CardsForList(listId: id), parameters: parameters).responseJSON { (response) in
+        Alamofire.request(Router.cardsForList(listId: id).URLString, parameters: parameters).responseJSON { (response) in
             guard let json = response.result.value else {
-                completion(.Failure(TrelloError.NetworkError(error: response.result.error)))
+                completion(.failure(TrelloError.networkError(error: response.result.error)))
                 return
             }
             
             do {
                 let cards = try [Card].decode(json)
-                completion(.Success(cards))
+                completion(.success(cards))
             } catch {
-                completion(.Failure(TrelloError.JSONError(error: error)))
+                completion(.failure(TrelloError.jsonError(error: error)))
             }
         }
     }
@@ -169,18 +169,20 @@ extension Trello {
 extension Trello {
     public func getMember(_ id: String, completion: @escaping (Result<Member>) -> Void) {
         let parameters = self.authParameters
-        
-        Alamofire.request(.GET, Router.Member(id: id), parameters: parameters).responseJSON { (response) in
+
+
+
+        Alamofire.request(Router.member(id: id).URLString, parameters: parameters).responseJSON { (response) in
             guard let json = response.result.value else {
-                completion(.Failure(TrelloError.NetworkError(error: response.result.error)))
+                completion(.failure(TrelloError.networkError(error: response.result.error)))
                 return
             }
-            
+
             do {
                 let member = try Member.decode(json)
-                completion(.Success(member))
+                completion(.success(member))
             } catch {
-                completion(.Failure(TrelloError.JSONError(error: error)))
+                completion(.failure(TrelloError.jsonError(error: error)))
             }
         }
     }
@@ -188,29 +190,29 @@ extension Trello {
     public func getMembersForCard(_ cardId: String, completion: @escaping (Result<[Member]>) -> Void) {
         let parameters = self.authParameters
         
-        Alamofire.request(.GET, Router.Member(id: cardId), parameters: parameters).responseJSON { (response) in
+        Alamofire.request(Router.member(id: cardId).URLString, parameters: parameters).responseJSON { (response) in
             guard let json = response.result.value else {
-                completion(.Failure(TrelloError.NetworkError(error: response.result.error)))
+                completion(.failure(TrelloError.networkError(error: response.result.error)))
                 return
             }
             
             do {
                 let members = try [Member].decode(json)
-                completion(.Success(members))
+                completion(.success(members))
             } catch {
-                completion(.Failure(TrelloError.JSONError(error: error)))
+                completion(.failure(TrelloError.jsonError(error: error)))
             }
         }
     }
     
-    public func getAvatarImage(_ avatarHash: String, size: AvatarSize, completion: (Result<Image>) -> Void) {
-        Alamofire.request(.GET, "https://trello-avatars.s3.amazonaws.com/\(avatarHash)/\(size.rawValue).png").responseImage { response in
+    public func getAvatarImage(_ avatarHash: String, size: AvatarSize, completion: @escaping (Result<Image>) -> Void) {
+        Alamofire.request("https://trello-avatars.s3.amazonaws.com/\(avatarHash)/\(size.rawValue).png").responseImage { response in
             guard let image = response.result.value else {
-                completion(.Failure(TrelloError.NetworkError(error: response.result.error)))
+                completion(.failure(TrelloError.networkError(error: response.result.error)))
                 return
             }
             
-            completion(.Success(image))
+            completion(.success(image))
         }
     }
     
@@ -221,7 +223,7 @@ extension Trello {
 }
 
 
-private enum Router: URLStringConvertible {
+private enum Router: URLConvertible {
     static let baseURLString = "https://api.trello.com/1/"
     
     case search
@@ -250,12 +252,18 @@ private enum Router: URLStringConvertible {
             return Router.baseURLString + "cards/\(cardId)/members/"
         }
     }
+
+    func asURL() throws -> URL {
+        return URL(string: self.URLString)!
+    }
 }
 
 // MARK: Dictionary Operator Overloading
 // http://stackoverflow.com/questions/24051904/how-do-you-add-a-dictionary-of-items-into-another-dictionary/
-func +=<K, V> (left: inout [K: V], right: [K: V]) {
-    right.forEach({ left.updateValue($1, forKey: $0) })
+func += <K, V> (left: inout [K:V], right: [K:V]) {
+    for (k, v) in right {
+        left[k] = v
+    }
 }
 
 func +<K, V> (left: [K: V], right: [K: V]) -> [K: V] {

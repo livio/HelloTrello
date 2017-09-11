@@ -1,17 +1,17 @@
 PODS:
-  - Alamofire (3.5.1)
-  - AlamofireImage (2.5.0):
-    - Alamofire (~> 3.5)
+  - Alamofire (4.5.1)
+  - AlamofireImage (3.3.0):
+    - Alamofire (~> 4.5)
   - Decodable (0.5)
-  - HelloTrello (0.1.3):
-    - Alamofire (~> 3.0)
-    - AlamofireImage (~> 2.0)
-    - Decodable (~> 0.4)
+  - HelloTrello (0.1.4):
+    - Alamofire (~> 4.5)
+    - AlamofireImage (~> 3.3)
+    - Decodable (~> 0.5)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.0)
-  - AlamofireImage (~> 2.0)
-  - Decodable (~> 0.4)
+  - Alamofire (~> 4.5)
+  - AlamofireImage (~> 3.3)
+  - Decodable (~> 0.5)
   - HelloTrello (from `../`)
 
 EXTERNAL SOURCES:
@@ -19,11 +19,11 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Alamofire: 0dfba1184a543e2aa160f4e39cac4e8aba48d223
-  AlamofireImage: 2d34936e5201270bb17a316a786e90e83b4a249d
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
   Decodable: 7c90acc68d357b71d0d6efc120faf9c53c644b7e
-  HelloTrello: 9956c04e249646b106d2499b566efed4c5a12c3c
+  HelloTrello: c8ba1d159249665e69be880b8afc9d5ed4470a6d
 
-PODFILE CHECKSUM: f849ca25f539450bc8cb582118cc61e126dc0d84
+PODFILE CHECKSUM: 6b2be029aaa8eb27927bc4681f9a3df9f198a51d
 
 COCOAPODS: 1.3.1

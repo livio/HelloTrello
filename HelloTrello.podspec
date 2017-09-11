@@ -38,6 +38,6 @@ Pod::Spec.new do |s|
   }
 
   s.dependency 'Alamofire', '~> 4.5'
-  s.dependency 'AlamofireImage', '~> 3.5'
+  s.dependency 'AlamofireImage', '~> 3.3'
   s.dependency 'Decodable', '~> 0.5'
 end

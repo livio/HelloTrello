@@ -35,7 +35,7 @@ extension Card: Decodable {
         return dateFormatter
     }
     
-    public static func decode(_ json: AnyObject) throws -> Card {
+    public static func decode(_ json: Any) throws -> Card {
         let dueDate: Date?
         
         if let jsonDate = try json =>? "due" as! String? {

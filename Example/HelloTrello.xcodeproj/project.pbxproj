@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D0B1AE91CBD8DA000D57CFE /* LivioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0B1ADA1CBD8C0B00D57CFE /* LivioTests.swift */; };
+		302E42BAC519358F1209E1D3 /* Pods_HelloTrello_mac_example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91BE1CE69B5DEC1715D8EAA7 /* Pods_HelloTrello_mac_example.framework */; };
 		5DA7F8E51F66CE4300CFC32F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA7F8E41F66CE4300CFC32F /* AppDelegate.m */; };
 		5DA7F8E81F66CE4300CFC32F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA7F8E71F66CE4300CFC32F /* main.m */; };
 		5DA7F8EB1F66CE4300CFC32F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA7F8EA1F66CE4300CFC32F /* ViewController.m */; };
@@ -18,20 +18,8 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		AB1F2B253805948270CEDDE3 /* Pods_HelloTrello_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB908FA635B8DE9E44DDD12 /* Pods_HelloTrello_Example.framework */; };
-		E7C7C995DAF0BB1E08C4A2DF /* Pods_HelloTrello_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F021A863648D2B1FBF0E07B2 /* Pods_HelloTrello_Tests.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		607FACE61AFB9204008FA782 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
-			remoteInfo = HelloTrello;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		052C4F40A2D82ABFDAF08F75 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -39,10 +27,11 @@
 		1814274D99B5C60E002A8B2D /* Pods-HelloTrello_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloTrello_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelloTrello_Tests/Pods-HelloTrello_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		1DCD0C8B6CF3D9C462E5263F /* Pods-HelloTrello_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloTrello_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HelloTrello_Example/Pods-HelloTrello_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		28CE862FB720C7051BCBB596 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		2968ACD1831BC4A9F1D1147C /* Pods-HelloTrello_mac_example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloTrello_mac_example.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelloTrello_mac_example/Pods-HelloTrello_mac_example.release.xcconfig"; sourceTree = "<group>"; };
 		2EC8F0FCCDFADB4F6D986096 /* HelloTrello.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HelloTrello.podspec; path = ../HelloTrello.podspec; sourceTree = "<group>"; };
 		3D47BE05F48AEE4B60C41136 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5814431E60BA376B356D4CF9 /* Pods-HelloTrello_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloTrello_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HelloTrello_Tests/Pods-HelloTrello_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		5D0B1ADA1CBD8C0B00D57CFE /* LivioTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivioTests.swift; sourceTree = "<group>"; };
+		58602F8170DCAEAECDC1A069 /* Pods-HelloTrello_mac_example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloTrello_mac_example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HelloTrello_mac_example/Pods-HelloTrello_mac_example.debug.xcconfig"; sourceTree = "<group>"; };
 		5DA7F8E11F66CE4300CFC32F /* HelloTrello_mac_example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloTrello_mac_example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DA7F8E31F66CE4300CFC32F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5DA7F8E41F66CE4300CFC32F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -59,9 +48,7 @@
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		607FACE51AFB9204008FA782 /* HelloTrello_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloTrello_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		91BE1CE69B5DEC1715D8EAA7 /* Pods_HelloTrello_mac_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloTrello_mac_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB2B40957E155069C8959494 /* Pods-HelloTrello_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloTrello_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-HelloTrello_Example/Pods-HelloTrello_Example.release.xcconfig"; sourceTree = "<group>"; };
 		F021A863648D2B1FBF0E07B2 /* Pods_HelloTrello_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloTrello_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -71,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				302E42BAC519358F1209E1D3 /* Pods_HelloTrello_mac_example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,14 +67,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB1F2B253805948270CEDDE3 /* Pods_HelloTrello_Example.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		607FACE21AFB9204008FA782 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E7C7C995DAF0BB1E08C4A2DF /* Pods_HelloTrello_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +80,8 @@
 				CB2B40957E155069C8959494 /* Pods-HelloTrello_Example.release.xcconfig */,
 				5814431E60BA376B356D4CF9 /* Pods-HelloTrello_Tests.debug.xcconfig */,
 				1814274D99B5C60E002A8B2D /* Pods-HelloTrello_Tests.release.xcconfig */,
+				58602F8170DCAEAECDC1A069 /* Pods-HelloTrello_mac_example.debug.xcconfig */,
+				2968ACD1831BC4A9F1D1147C /* Pods-HelloTrello_mac_example.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -132,7 +114,6 @@
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for HelloTrello */,
-				607FACE81AFB9204008FA782 /* Tests */,
 				5DA7F8E21F66CE4300CFC32F /* HelloTrello_mac_example */,
 				607FACD11AFB9204008FA782 /* Products */,
 				8595C649729913495BB48423 /* Frameworks */,
@@ -144,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				607FACD01AFB9204008FA782 /* HelloTrello_Example.app */,
-				607FACE51AFB9204008FA782 /* HelloTrello_Tests.xctest */,
 				5DA7F8E11F66CE4300CFC32F /* HelloTrello_mac_example.app */,
 			);
 			name = Products;
@@ -172,24 +152,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		607FACE81AFB9204008FA782 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				5D0B1ADA1CBD8C0B00D57CFE /* LivioTests.swift */,
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
-				607FACE91AFB9204008FA782 /* Supporting Files */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		607FACE91AFB9204008FA782 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				607FACEA1AFB9204008FA782 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +168,7 @@
 				3D47BE05F48AEE4B60C41136 /* Pods.framework */,
 				0CB908FA635B8DE9E44DDD12 /* Pods_HelloTrello_Example.framework */,
 				F021A863648D2B1FBF0E07B2 /* Pods_HelloTrello_Tests.framework */,
+				91BE1CE69B5DEC1715D8EAA7 /* Pods_HelloTrello_mac_example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -217,9 +180,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5DA7F8F41F66CE4300CFC32F /* Build configuration list for PBXNativeTarget "HelloTrello_mac_example" */;
 			buildPhases = (
+				7772EF699BFDBA0E2BEF4786 /* [CP] Check Pods Manifest.lock */,
 				5DA7F8DD1F66CE4300CFC32F /* Sources */,
 				5DA7F8DE1F66CE4300CFC32F /* Frameworks */,
 				5DA7F8DF1F66CE4300CFC32F /* Resources */,
+				0AEB2823C9A185E2FF12D248 /* [CP] Embed Pods Frameworks */,
+				D83405B3353022B38CE89C18 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,27 +216,6 @@
 			productReference = 607FACD01AFB9204008FA782 /* HelloTrello_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		607FACE41AFB9204008FA782 /* HelloTrello_Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "HelloTrello_Tests" */;
-			buildPhases = (
-				02C8964D02C129C7124F5E55 /* [CP] Check Pods Manifest.lock */,
-				607FACE11AFB9204008FA782 /* Sources */,
-				607FACE21AFB9204008FA782 /* Frameworks */,
-				607FACE31AFB9204008FA782 /* Resources */,
-				E879835EE4EF74AD40D6406E /* [CP] Embed Pods Frameworks */,
-				896A60FDF6432CD153D965BE /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				607FACE71AFB9204008FA782 /* PBXTargetDependency */,
-			);
-			name = HelloTrello_Tests;
-			productName = Tests;
-			productReference = 607FACE51AFB9204008FA782 /* HelloTrello_Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -278,7 +223,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					5DA7F8E01F66CE4300CFC32F = {
@@ -287,11 +232,8 @@
 					};
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = NCVC2MHU7M;
 						LastSwiftMigration = 0830;
-					};
-					607FACE41AFB9204008FA782 = {
-						CreatedOnToolsVersion = 6.3.1;
-						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
 			};
@@ -309,7 +251,6 @@
 			projectRoot = "";
 			targets = (
 				607FACCF1AFB9204008FA782 /* HelloTrello_Example */,
-				607FACE41AFB9204008FA782 /* HelloTrello_Tests */,
 				5DA7F8E01F66CE4300CFC32F /* HelloTrello_mac_example */,
 			);
 		};
@@ -335,32 +276,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		607FACE31AFB9204008FA782 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		02C8964D02C129C7124F5E55 /* [CP] Check Pods Manifest.lock */ = {
+		0AEB2823C9A185E2FF12D248 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
+				"${SRCROOT}/Pods/Target Support Files/Pods-HelloTrello_mac_example/Pods-HelloTrello_mac_example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-macOS/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage-macOS/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Decodable-macOS/Decodable.framework",
+				"${BUILT_PRODUCTS_DIR}/HelloTrello-macOS/HelloTrello.framework",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HelloTrello_Tests-checkManifestLockResult.txt",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Decodable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HelloTrello.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HelloTrello_mac_example/Pods-HelloTrello_mac_example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6E11DE6170DD13686E3435D4 /* [CP] Check Pods Manifest.lock */ = {
@@ -381,19 +321,22 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		896A60FDF6432CD153D965BE /* [CP] Copy Pods Resources */ = {
+		7772EF699BFDBA0E2BEF4786 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HelloTrello_mac_example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HelloTrello_Tests/Pods-HelloTrello_Tests-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BBFC1FBB9A744428C7C9CE14 /* [CP] Copy Pods Resources */ = {
@@ -411,28 +354,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HelloTrello_Example/Pods-HelloTrello_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E879835EE4EF74AD40D6406E /* [CP] Embed Pods Frameworks */ = {
+		D83405B3353022B38CE89C18 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-HelloTrello_Tests/Pods-HelloTrello_Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/Decodable/Decodable.framework",
-				"${BUILT_PRODUCTS_DIR}/HelloTrello/HelloTrello.framework",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Decodable.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HelloTrello.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HelloTrello_Tests/Pods-HelloTrello_Tests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HelloTrello_mac_example/Pods-HelloTrello_mac_example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FF1875A7E612725CF21D3EDB /* [CP] Embed Pods Frameworks */ = {
@@ -442,10 +376,10 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-HelloTrello_Example/Pods-HelloTrello_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/Decodable/Decodable.framework",
-				"${BUILT_PRODUCTS_DIR}/HelloTrello/HelloTrello.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage-iOS/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Decodable-iOS/Decodable.framework",
+				"${BUILT_PRODUCTS_DIR}/HelloTrello-iOS/HelloTrello.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -481,24 +415,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		607FACE11AFB9204008FA782 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
-				5D0B1AE91CBD8DA000D57CFE /* LivioTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		607FACE71AFB9204008FA782 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 607FACCF1AFB9204008FA782 /* HelloTrello_Example */;
-			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5DA7F8EE1F66CE4300CFC32F /* Main.storyboard */ = {
@@ -530,7 +447,9 @@
 /* Begin XCBuildConfiguration section */
 		5DA7F8F21F66CE4300CFC32F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58602F8170DCAEAECDC1A069 /* Pods-HelloTrello_mac_example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -542,7 +461,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				INFOPLIST_FILE = HelloTrello_mac_example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.livio.HelloTrello-mac-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -551,7 +470,9 @@
 		};
 		5DA7F8F31F66CE4300CFC32F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2968ACD1831BC4A9F1D1147C /* Pods-HelloTrello_mac_example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -562,7 +483,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = HelloTrello_mac_example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.livio.HelloTrello-mac-example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -582,8 +503,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -606,7 +529,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -627,8 +550,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -644,9 +569,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -656,8 +582,9 @@
 			baseConfigurationReference = 1DCD0C8B6CF3D9C462E5263F /* Pods-HelloTrello_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NCVC2MHU7M;
 				INFOPLIST_FILE = HelloTrello/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -671,49 +598,14 @@
 			baseConfigurationReference = CB2B40957E155069C8959494 /* Pods-HelloTrello_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NCVC2MHU7M;
 				INFOPLIST_FILE = HelloTrello/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		607FACF31AFB9204008FA782 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5814431E60BA376B356D4CF9 /* Pods-HelloTrello_Tests.debug.xcconfig */;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		607FACF41AFB9204008FA782 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1814274D99B5C60E002A8B2D /* Pods-HelloTrello_Tests.release.xcconfig */;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -743,15 +635,6 @@
 			buildConfigurations = (
 				607FACF01AFB9204008FA782 /* Debug */,
 				607FACF11AFB9204008FA782 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "HelloTrello_Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				607FACF31AFB9204008FA782 /* Debug */,
-				607FACF41AFB9204008FA782 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

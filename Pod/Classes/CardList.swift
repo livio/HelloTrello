@@ -19,7 +19,7 @@ public struct CardList {
 }
 
 extension CardList: Decodable {
-    public static func decode(_ json: AnyObject) throws -> CardList {
+    public static func decode(_ json: Any) throws -> CardList {
         return try CardList(id: json => "id",
                             name: json => "name",
                             boardId: json =>? "idBoard",
