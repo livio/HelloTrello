@@ -1,14 +1,23 @@
-source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-pod 'Alamofire',        '~> 3.0'
-pod 'Decodable',        '~> 0.4'
-pod 'AlamofireImage',   '~> 2.0'
-
-target 'HelloTrello_Example', :exclusive => true do
+target 'HelloTrello_Example' do
+  platform :ios, '9.0'
   pod 'HelloTrello', :path => '../'
+
+  pod 'Alamofire',        '~> 3.0'
+  pod 'Decodable',        '~> 0.4'
+  pod 'AlamofireImage',   '~> 2.0'
 end
 
-target 'HelloTrello_Tests', :exclusive => true do
+target 'HelloTrello_mac_example' do
+  platform :macos, '10.10'
+  pod 'HelloTrello', :path => '../'
+
+  pod 'Alamofire',        '~> 3.0'
+  pod 'Decodable',        '~> 0.4'
+  pod 'AlamofireImage',   '~> 2.0'
+end
+
+target 'HelloTrello_Tests' do
   pod 'HelloTrello', :path => '../'
 end

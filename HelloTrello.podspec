@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "HelloTrello"
-  s.version          = "0.1.3"
+  s.version          = "0.1.4"
   s.summary          = "A Swift library to interact with the Trello API"
 
 # This description is used to generate tags and improve search results.
@@ -29,6 +29,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '9.0'
   s.tvos.deployment_target = '9.0'
+  s.macos.deployment_target = '10.10'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
@@ -36,7 +37,7 @@ Pod::Spec.new do |s|
     'HelloTrello' => ['Pod/Assets/*.png']
   }
 
-  s.dependency 'Alamofire', '~> 3.0'
-  s.dependency 'AlamofireImage', '~> 2.0'
-  s.dependency 'Decodable', '~> 0.4'
+  s.dependency 'Alamofire', '~> 3.5'
+  s.dependency 'AlamofireImage', '~> 2.5'
+  s.dependency 'Decodable', '~> 0.5'
 end
