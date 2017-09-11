@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "HelloTrello"
-  s.version          = "0.2.0"
+  s.version          = "0.2.1"
   s.summary          = "A Swift library to interact with the Trello API"
 
 # This description is used to generate tags and improve search results.
