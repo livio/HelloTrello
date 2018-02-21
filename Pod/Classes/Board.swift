@@ -7,9 +7,12 @@
 //
 
 import Foundation
-import Decodable
 
-public struct Board {
+public struct Boards: Codable {
+    public let boards: [Board]
+}
+
+public struct Board: Codable {
     public let id: String
     public let name: String
     public let description: String?
@@ -19,18 +22,11 @@ public struct Board {
     public let lists: [CardList]?
     public let cards: [Card]?
     public let members: [Member]?
-}
 
-extension Board: Decodable {
-    public static func decode(_ json: Any) throws -> Board {
-        return try Board(id: json => "id",
-                         name: json => "name",
-                         description: json =>? "desc",
-                         url: json =>? "url",
-                         closed: json =>? "closed",
-                         organizationId: json =>? "idOrganization",
-                         lists: json =>? "lists",
-                         cards: json =>? "cards",
-                         members: json =>? "members")
+    enum CodingKeys: String, CodingKey {
+        case id, name, url, closed, lists, cards, members
+        case description = "desc"
+        case organizationId = "idOrganization"
     }
 }
+

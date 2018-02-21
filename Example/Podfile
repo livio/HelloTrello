@@ -4,8 +4,7 @@ target 'HelloTrello_Example' do
   platform :ios, '10.0'
   pod 'HelloTrello', :path => '../'
 
-  pod 'Alamofire',        '~> 4.5'
-  pod 'Decodable',        '~> 0.5'
+  pod 'Alamofire',        '~> 4.6'
   pod 'AlamofireImage',   '~> 3.3'
 end
 
@@ -13,12 +12,6 @@ target 'HelloTrello_mac_example' do
   platform :macos, '10.11'
   pod 'HelloTrello', :path => '../'
 
-  pod 'Alamofire',        '~> 4.5'
-  pod 'Decodable',        '~> 0.5'
+  pod 'Alamofire',        '~> 4.6'
   pod 'AlamofireImage',   '~> 3.3'
-end
-
-target 'HelloTrello_Tests' do
-  platform :ios, '10.0'
-  pod 'HelloTrello', :path => '../'
 end

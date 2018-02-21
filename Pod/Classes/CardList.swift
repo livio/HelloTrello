@@ -7,24 +7,17 @@
 //
 
 import Foundation
-import Decodable
 
-public struct CardList {
+public struct CardList: Codable {
     public let id: String
     public let name: String
     public let boardId: String?
     public let pos: Int?
     public let subscribed: Bool?
     public let closed: Bool?
-}
 
-extension CardList: Decodable {
-    public static func decode(_ json: Any) throws -> CardList {
-        return try CardList(id: json => "id",
-                            name: json => "name",
-                            boardId: json =>? "idBoard",
-                            pos: json =>? "pos",
-                            subscribed: json =>? "subscribed",
-                            closed: json =>? "closed")
+    enum CodingKeys: String, CodingKey {
+        case id, name, pos, subscribed, closed
+        case boardId = "idBoard"
     }
 }

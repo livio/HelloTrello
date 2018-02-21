@@ -7,9 +7,8 @@
 //
 
 import Foundation
-import Decodable
 
-public struct Member {
+public struct Member: Codable {
     public let id: String
     public let avatarHash: String?
     public let bio: String?
@@ -18,17 +17,8 @@ public struct Member {
     public let initials: String?
     public let username: String?
     public let email: String?
-}
 
-extension Member: Decodable {
-    public static func decode(_ json: Any) throws -> Member {
-        return try Member(id: json => "id",
-                          avatarHash: json =>? "avatarHash",
-                          bio: json =>? "bio",
-                          confirmed: json =>? "confirmed",
-                          fullName: json =>? "fullName",
-                          initials: json =>? "initials",
-                          username: json =>? "username",
-                          email: json =>? "email")
+    enum CodingKeys: String, CodingKey {
+        case id, avatarHash, bio, confirmed, fullName, initials, username, email
     }
 }
